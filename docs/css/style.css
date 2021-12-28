@@ -1,0 +1,242 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+:root {
+    --redPrimary: hsl(0, 100%, 74%);
+    --greenPrimary: hsl(154, 59%, 51%);
+    --blueAccent: hsl(248, 32%, 49%);
+    --darkBlueNeutral: hsl(249, 10%, 26%);
+    --grayishBlueNeutral: hsl(246, 25%, 77%);
+    --fontFamilyPrincipal: 'Poppins', sans-serif;
+    --fontSizePrincipal: 1.6rem;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/bg-intro-mobile.png"), linear-gradient(var(--redPrimary), var(--redPrimary));
+    font-size: var(--fontSizePrincipal);
+    font-family: var(--fontFamilyPrincipal);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 125rem;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.heading {
+    font-weight: 500;
+}
+
+.heading--primary {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 1.4;
+}
+
+.button:link, .button:visited, .button {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.button--form-cta {
+    background-color: var(--blueAccent);
+    box-shadow: 0 8px 0 #00000024;
+    border-radius: 1rem;
+    color: var(--grayishBlueNeutral);
+    font-size: var(--fontSizePrincipal);
+    font-weight: 500;
+    text-align: center;
+    padding: 2rem 6.2rem;
+    line-height: 1.6;
+    letter-spacing: -0.5px;
+    width: 100%;
+}
+
+.button--form-cta span {
+    color: #fff;
+    font-weight: 600;
+}
+
+.button--submit {
+    background: var(--greenPrimary);
+    box-shadow: 0 4px 0 #00000061;
+    border-radius: .5rem;
+    color: #fff;
+    font-size: var(--fontSizePrincipal);
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding: 2rem;
+    width: 100%;
+}
+
+.sign-up {
+    display: grid;
+    place-content: center;
+    padding: 4.8rem 0 0 0;
+    margin-top: 4.2rem;
+}
+
+.sign-up__info {
+    text-align: center;
+}
+
+.sign-up__text {
+    color: #fff;
+    margin-top: 1.8rem;
+    line-height: 1.6;
+}
+
+.sign-up__form {
+    margin: 6.2rem 0;
+}
+
+.form {
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 0 8px 0 #00000029;
+    margin-top: 2rem;
+    padding: 2.4rem 2rem;
+}
+
+.form__group {
+    margin-bottom: 1.6rem;
+}
+
+.form__group-input {
+    position: relative;
+}
+
+.form__input {
+    border-radius: .5rem;
+    border: 1px solid var(--grayishBlueNeutral);
+    font-size: var(--fontSizePrincipal);
+    font-weight: 600;
+    padding: 2.4rem 6.8rem 2.4rem 2.4rem;
+    width: 100%;
+}
+
+.form__input--invalid {
+    background-image: url("../images/icon-error.svg");
+    background-repeat: no-repeat;
+    background-position: right 1.6rem center;
+    border: 2.5px solid var(--redPrimary);
+}
+
+.form__input-msj-error {
+    display: none;
+    color: var(--redPrimary);
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: .6rem;
+    position: absolute;
+    text-align: right;
+}
+
+.form__input--invalid+.form__input-msj-error {
+    display: block;
+    position: relative;
+}
+
+.form__input::placeholder {
+    font-weight: 600;
+    font-size: var(--fontSizePrincipal);
+}
+
+.form__input--placeholder-red::placeholder {
+    color: var(--redPrimary);
+}
+
+.form__terms {
+    text-align: center;
+}
+
+.form__terms-text {
+    color: var(--grayishBlueNeutral);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 1.6rem;
+    margin-top: 1.6rem;
+}
+
+.form__terms-text span {
+    font-weight: 600;
+    color: var(--redPrimary);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+
+    .sign-up {
+        margin-top: 3.2rem;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        background-image: url("../images/bg-intro-desktop.png"), linear-gradient(var(--redPrimary), var(--redPrimary));
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .button--form-cta {
+        font-weight: 600;
+    }
+
+    .heading--primary {
+        font-size: 5.2rem;
+        line-height: 1.1;
+    }
+
+    .sign-up {
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.4rem;
+    }
+
+    .sign-up__info {
+        text-align: left;
+    }
+
+    .sign-up__text {
+        font-size: 1.8rem;
+        margin-top: 2.4rem;
+    }
+
+    .form {
+        padding: 3.6rem;
+        margin-top: 2.4rem;
+    }
+
+    .form__group {
+        margin-bottom: 2rem;
+    }
+
+    .form__input {
+        padding: 2.4rem 6.8rem 2.4rem 3.6rem;
+    }
+
+    .form__terms-text {
+        font-size: 1.3rem;
+    }
+}
